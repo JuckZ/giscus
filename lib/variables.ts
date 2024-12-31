@@ -16,6 +16,9 @@ export const env = {
   revalidate_first_page: process.env.NEXT_PUBLIC_REVALIDATE_FIRST_PAGE !== 'false',
   origins: JSON.parse(process.env.ORIGINS || '[]') as string[],
   origins_regex: JSON.parse(process.env.ORIGINS_REGEX || '[]') as string[],
+  demo_repo: process.env.NEXT_PUBLIC_DEMO_REPO,
+  demo_repo_id: process.env.NEXT_PUBLIC_DEMO_REPO_ID,
+  demo_category_id: process.env.NEXT_PUBLIC_DEMO_CATEGORY_ID,
 } as const;
 
 export const availableThemes = [
@@ -35,8 +38,23 @@ export const availableThemes = [
   'noborder_gray',
   'cobalt',
   'purple_dark',
+  'gruvbox',
+  'gruvbox_dark',
+  'gruvbox_light',
+  'catppuccin_latte',
+  'catppuccin_frappe',
+  'catppuccin_macchiato',
+  'catppuccin_mocha',
+  'fro',
   'custom',
 ] as const;
+
+export const meta = {
+  title: 'giscus',
+  description: 'A comments widget built on GitHub Discussions.',
+  image:
+    'https://opengraph.githubassets.com/4f866d5b634e7cd5422af77f8dbfb6d48dd288b7c5c18326544c1973210320ed/giscus/giscus',
+};
 
 export type AvailableTheme = (typeof availableThemes)[number];
 
